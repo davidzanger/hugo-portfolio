@@ -19,15 +19,21 @@
           <div class="title mb-5">
             <h1 class="text-center mb-4">{{ .Title }}</h1>
             <div class="text-center">
-              {{ .Params.author }} 
-              <small>|</small>
-              {{ .Date.Format (.Site.Params.datesFormat.article | default "Jan 2, 2006") }}
+            {{ if .Params.author }}
+                {{ .Params.author }} 
+                <small>|</small>
+            {{ end }}
+            {{ if .Date }}
+                {{ .Date.Format (.Site.Params.datesFormat.article | default "Jan 2, 2006") }}
+            {{ end }}
 
-              {{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
+            {{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
+                {{ if (ne .Params.enableReadingTime false)   }}
               <span id="readingTime">
                 {{ .Site.Params.singlePages.readTime.content | default "min read" }}
               </span>
               {{ end }}
+            {{ end }}
             </div>
           </div>
           {{ if .Params.image }}
