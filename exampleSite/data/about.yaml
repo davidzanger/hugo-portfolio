@@ -7,11 +7,17 @@ content: |-
   I am currently working on a project that will be used to help people find the best way to get around the city.
 skills:
   enable: true
-  title: "Here are a few technologies I've been working with recently:"
+  title: "I have experience working with several technologies, and here's my self-assessed knowledge level for each:"
   items:
-    - "HTML"
-    - "CSS"
-    - "JavaScript"
-    - "React"
-    - "Node"
-    - "Express"
+    - name: "Python"
+      level: 90
+    - name: "C++"
+      level: 80
+    - name: "HTML"
+      level: 70
+    - name: "CSS"
+      level: 90
+    - name: "Git"
+      level: 80
+    - name: "JavaScript"
+      level: 70
