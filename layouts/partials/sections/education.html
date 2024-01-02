@@ -4,7 +4,9 @@
         <h3 class="text-center">{{ .Site.Data.education.title | default "Education" }}</h3>
         <div class="row justify-content-center py-5">
             {{ $indexMenu := .Site.Data.education.index }}
-            {{ range $index, $element := .Site.Data.education.items }}
+            {{/*  from https://discourse.gohugo.io/t/multilingual-data-files/4684/3   */}}
+            {{ $data := index .Site.Data.education .Site.Language.Lang }}
+            {{ range $index, $element := $data.items }}
             <div class="col-12 p-0">
                 <div class="row row align-items-center justify-content-center m-1 mb-4">
                     {{ if $indexMenu }}

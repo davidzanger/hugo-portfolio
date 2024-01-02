@@ -1,23 +1,25 @@
 enable: true
 title: "About Me"
 image: "/images/me.png"
-content: |-
-  I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and art. I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. 
-
-  I am currently working on a project that will be used to help people find the best way to get around the city.
 skills:
   enable: true
-  title: "I have experience working with several technologies, and here's my self-assessed knowledge level for each:"
-  items:
-    - name: "Python"
-      level: 90
-    - name: "C++"
-      level: 80
-    - name: "HTML"
-      level: 70
-    - name: "CSS"
-      level: 90
-    - name: "Git"
-      level: 80
-    - name: "JavaScript"
-      level: 70
+en:
+  content: |-
+    I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and art. I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. 
+
+    I am currently working on a project that will be used to help people find the best way to get around the city.
+  skills:
+    title: "I have experience working with several technologies, and here's my self-assessed knowledge level for each:"
+    items:
+      - name: "Python"
+        level: 90
+      - name: "C++"
+        level: 80
+      - name: "HTML"
+        level: 70
+      - name: "CSS"
+        level: 90
+      - name: "Git"
+        level: 80
+      - name: "JavaScript"
+        level: 70
