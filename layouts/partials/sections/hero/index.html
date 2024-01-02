@@ -3,17 +3,18 @@
     <div class="container px-3 px-sm-5 px-md-5 px-lg-5 pt-lg-3">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-8 content {{ if .Site.Params.animate }}animate{{ end }}" id="primary-font">
+                {{ $heroLanguageData := index .Site.Data.hero .Site.Language.Lang }}
                 <span class="subtitle">
-                    {{ .Site.Data.hero.intro }}
+                    {{ $heroLanguageData.intro }}
                 </span>
                 <h2>
-                    {{ .Site.Data.hero.title }}
+                    {{ $heroLanguageData.title }}
                 </h2>
                 <h3>
-                    {{ .Site.Data.hero.subtitle }}
+                    {{ $heroLanguageData.subtitle }}
                 </h3>
                 <p class="hero-content">
-                    {{ .Site.Data.hero.content | markdownify }}
+                    {{ $heroLanguageData.content | markdownify }}
                 </p>
                 <div class="row">
                     <div class="col-auto h-100">
