@@ -1,7 +1,7 @@
 enable: true
-# title: "Custom Name"
 index: false
 en:
+  # title: "Custom Name"
   items:
     - title: "Master of Business Administration"
       school:
