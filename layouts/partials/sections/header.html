@@ -89,7 +89,8 @@
                     {{ if and (.Site.Data.about.enable | default false) (not (.Site.Params.navbar.menus.disableAbout | default false)) }}
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#about" aria-label="about">
-                            {{ .Site.Data.about.title | default "About" }}
+                            {{ $aboutLanguageData := index .Site.Data.about .Site.Language.Lang }}
+                            {{ $aboutLanguageData.title | default "About" }}
                         </a>
                     </li>
                     {{ end }}
@@ -98,7 +99,8 @@
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#experience"
                             aria-label="experience">
-                            {{ .Site.Data.experience.title | default "Experience" }}
+                            {{ $experienceLanguageData := index .Site.Data.experience .Site.Language.Lang }}
+                            {{ $experienceLanguageData.title | default "Experience" }}
                         </a>
                     </li>
                     {{ end }}
@@ -107,7 +109,8 @@
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#education"
                             aria-label="education">
-                            {{ .Site.Data.education.title | default "Education" }}
+                            {{ $educationLanguageData := index .Site.Data.education .Site.Language.Lang }}
+                            {{ $educationLanguageData.title | default "Education" }}
                         </a>
                     </li>
                     {{ end }}
@@ -116,7 +119,8 @@
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#projects"
                             aria-label="projects">
-                            {{ .Site.Data.projects.title | default "Projects" }}
+                            {{ $projectsLanguageData := index .Site.Data.projects .Site.Language.Lang }}
+                            {{ $projectsLanguageData.title | default "Projects" }}
                         </a>
                     </li>
                     {{ end }}
@@ -125,7 +129,8 @@
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#achievements"
                             aria-label="achievements">
-                            {{ .Site.Data.achievements.title | default "Achievements" }}
+                            {{ $achievementsLanguageData := index .Site.Data.achievements .Site.Language.Lang }}
+                            {{ $achievementsLanguageData.title | default "Achievements" }}
                         </a>
                     </li>
                     {{ end }}
@@ -134,7 +139,8 @@
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#contact"
                             aria-label="contact">
-                            {{ .Site.Params.contact.title | default "Contact" }}
+                            {{ $contactLanguageData := index .Site.Params.contact .Site.Language.Lang }}
+                            {{ $contactLanguageData.title | default "Contact" }}
                         </a>
                     </li>
                     {{ end }}
