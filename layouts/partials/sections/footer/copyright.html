@@ -10,8 +10,8 @@
             &copy; {{ now.Format "2006"}} {{ .Site.Params.copyright }} {{ .Site.Params.terms.copyright | default "All Rights Reserved" }}
             {{ if .Site.Params.legalNotice }}
             <div class="text-secondary">
-                    <a href="{{ .Site.Params.legalNotice.route }}" title="{{ .Site.Params.legalNotice.title | default `Legal Notice` }}">
-                        {{ .Site.Params.legalNotice.title | default `Legal Notice` }}
+                    <a href="{{ .Site.Params.legalNotice.route }}" title="{{ i18n `legalNotice` | default `Legal Notice` }}">
+                        {{ i18n "legalNotice" | default `Legal Notice` }}
                 </a>
             </div>
             {{ end }}
