@@ -1,31 +1,32 @@
 {{ if .Site.Data.contact.enable | default false }}
+{{ $languageData := index .Site.Data.contact .Site.Language.Lang }}
 <section id="contact" class="py-5">
     <div class="container">
-        <h3 class="text-center">{{ .Site.Data.contact.title | default "Get in Touch" }}</h3>
+        <h3 class="text-center">{{ $languageData.title | default "Get in Touch" }}</h3>
         <div class="px-0 px-md-5 px-lg-5">
             <div class="row justify-content-center px-md-5">
                 <div class="col-md-8 py-3">
                     <div class="text-center">
-                        {{ .Site.Data.contact.content | emojify | markdownify }}
+                        {{ $languageData.content | emojify | markdownify }}
                     </div>
                     {{ if .Site.Data.contact.formspree.enable | default false }}
                     <div class="row justify-content-center">
                         <form id="contact-form" action="https://formspree.io/f/{{ .Site.Data.contact.formspree.formId }}" onsubmit="handleFormspreeSubmit(event)" method="POST" class="col-md-7">
                             <div class="form-group pt-3">
-                                <input type="email" class="form-control"  name="email" required="true" placeholder='{{ .Site.Data.contact.formspree.emailCaption | emojify | default "Enter your email" }}'>
+                                <input type="email" class="form-control"  name="email" required="true" placeholder='{{ $languageData.formspree.emailCaption | emojify | default "Enter your email" }}'>
                             </div>
                             <div class="form-group pt-3">
-                                <textarea class="form-control" name="message" required="true" placeholder='{{ .Site.Data.contact.formspree.messageCaption | emojify | default "Enter your message" }}' rows="3"></textarea>
+                                <textarea class="form-control" name="message" required="true" placeholder='{{ $languageData.formspree.messageCaption | emojify | default "Enter your message" }}' rows="3"></textarea>
                             </div>
                             <div class="form-group text-center pt-3">
-                                <button type="submit" class="btn">{{ .Site.Data.contact.btnName | default "Get in Touch" }}</button>
+                                <button type="submit" class="btn">{{ $languageData.btnName | default "Get in Touch" }}</button>
                             </div>
                         </form>
                     </div>
                     {{ else if .Site.Data.contact.email }}
                     <div class="text-center pt-3">
                         <a href="mailto:{{ .Site.Data.contact.email }}" class="btn">
-                            {{ .Site.Data.contact.btnName | default "Get in Touch" }}
+                            {{ $languageData.btnName | default "Get in Touch" }}
                         </a>
                     </div>
                     {{ end }}
