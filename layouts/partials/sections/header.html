@@ -135,11 +135,11 @@
                     </li>
                     {{ end }}
 
-                    {{ if and (.Site.Params.contact.enable | default false) (not (.Site.Params.navbar.menus.disableContact | default false)) }}
+                    {{ if and (.Site.Data.contact.enable | default false) (not (.Site.Params.navbar.menus.disableContact | default false)) }}
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#contact"
                             aria-label="contact">
-                            {{ $contactLanguageData := index .Site.Params.contact .Site.Language.Lang }}
+                            {{ $contactLanguageData := index .Site.Data.contact .Site.Language.Lang }}
                             {{ $contactLanguageData.title | default "Contact" }}
                         </a>
                     </li>
