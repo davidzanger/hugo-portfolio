@@ -50,7 +50,7 @@
     <nav class="pt-3 navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             <!-- navbar brand -->
-            <a class="navbar-brand primary-font text-wrap" href="{{ .Site.BaseURL | relURL }}">
+            <a class="navbar-brand primary-font text-wrap" href="{{ .Site.BaseURL | relLangURL }}">
                 {{ if and (or (.Site.Params.favicon) (.Site.Params.navbar.brandLogo)) .Site.Params.navbar.showBrandLogo | default true }}
                 <img src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon }}" width="30" height="30"
                     class="d-inline-block align-top" alt="logo">
@@ -88,7 +88,7 @@
 
                     {{ if and (.Site.Data.about.enable | default false) (not (.Site.Params.navbar.menus.disableAbout | default false)) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#about" aria-label="about">
+                        <a class="nav-link" href="#about" aria-label="about">
                             {{ $aboutLanguageData := index .Site.Data.about .Site.Language.Lang }}
                             {{ $aboutLanguageData.title | default "About" }}
                         </a>
@@ -97,7 +97,7 @@
 
                     {{ if and (.Site.Data.experience.enable | default false) (not (.Site.Params.navbar.menus.disableExperience | default false)) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#experience"
+                        <a class="nav-link" href="#experience"
                             aria-label="experience">
                             {{ $experienceLanguageData := index .Site.Data.experience .Site.Language.Lang }}
                             {{ $experienceLanguageData.title | default "Experience" }}
@@ -107,7 +107,7 @@
 
                     {{ if and (.Site.Data.education.enable | default false) (not (.Site.Params.navbar.menus.disableEducation | default false)) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#education"
+                        <a class="nav-link" href="#education"
                             aria-label="education">
                             {{ $educationLanguageData := index .Site.Data.education .Site.Language.Lang }}
                             {{ $educationLanguageData.title | default "Education" }}
@@ -117,7 +117,7 @@
 
                     {{ if and (.Site.Data.projects.enable | default false) (not (.Site.Params.navbar.menus.disableProjects | default false)) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#projects"
+                        <a class="nav-link" href="#projects"
                             aria-label="projects">
                             {{ $projectsLanguageData := index .Site.Data.projects .Site.Language.Lang }}
                             {{ $projectsLanguageData.title | default "Projects" }}
@@ -127,7 +127,7 @@
 
                     {{ if and (.Site.Data.achievements.enable | default false) (not (.Site.Params.navbar.menus.disableAchievements | default false)) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#achievements"
+                        <a class="nav-link" href="#achievements"
                             aria-label="achievements">
                             {{ $achievementsLanguageData := index .Site.Data.achievements .Site.Language.Lang }}
                             {{ $achievementsLanguageData.title | default "Achievements" }}
@@ -137,7 +137,7 @@
 
                     {{ if and (.Site.Data.contact.enable | default false) (not (.Site.Params.navbar.menus.disableContact | default false)) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#contact"
+                        <a class="nav-link" href="#contact"
                             aria-label="contact">
                             {{ $contactLanguageData := index .Site.Data.contact .Site.Language.Lang }}
                             {{ $contactLanguageData.title | default "Contact" }}
@@ -199,23 +199,23 @@
                     {{ end }}
 
                     <!-- language switcher -->
-                    {{ if gt (len $.Site.Home.AllTranslations) 1 }}
-                    
-                    <li class="nav-item navbar-text dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{ .Language.Lang }}">
-                        {{ .Language.Lang | upper }}
-                    </a>
-                    <div class="dropdown-menu shadow-lg rounded" aria-labelledby="navbarDropdown">
-                        {{ range $.Site.Home.AllTranslations }}
-                            <a class="dropdown-item text-center nav-link" href="{{ .Permalink }}"
-                                title="">
-                                {{ .Language.LanguageName}}
-                            </a>
-                        {{ end }}
-                    </div>
-                </li>
-                {{ end }}
+                        {{ if gt (len $.Site.Home.AllTranslations) 1 }}
+                        
+                        <li class="nav-item navbar-text dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="{{ .Language.Lang }}">
+                            {{ .Language.Lang | upper }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow-lg rounded" aria-labelledby="navbarDropdown">
+                            {{ range $.Site.Home.AllTranslations }}
+                                <a class="dropdown-item text-center nav-link" href="{{ .Permalink }}"
+                                    title="">
+                                    {{ .Language.LanguageName}}
+                                </a>
+                            {{ end }}
+                        </div>
+                    </li>
+                    {{ end }}
                 </ul>
 
             </div>
