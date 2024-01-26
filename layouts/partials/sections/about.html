@@ -15,25 +15,12 @@
                 {{ $languageData.content | markdownify }}
 
                 {{ if .Site.Data.about.skills.enable }}
-                {{ $languageData.skills.title }}
-                <ul>
-                    {{ range $languageData.skills.items }}
-                        <div class="py-2">
-                            <div class="row">
-                                <div class="col text-left">
-                                    <p class="m-0">{{ .name }}
-                                    </p>
-                                </div>
-                                <div class="col text-end">
-                                    <p class="m-0">{{.level}}</p>
-                                </div>
-                            </div>
-                            <div class="progress bg-secondary" style="height: 5px;">
-                                <div class="progress-bar" role="progressbar" style="width: {{.level}}%;" aria-valuenow="{{.level}}" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
+                    {{ $languageData.skills.title }}
+                    {{ if eq .Site.Data.about.skills.mode "extended" }}
+                    {{ partial "sections/skills_extended.html" . }}
+                    {{ else if eq .Site.Data.about.skills.mode "simple" }}
+                    {{ partial "sections/skills_simple.html" . }}
                     {{ end }}
-                </ul>
                 {{ end }}
             </div>
         </div>
