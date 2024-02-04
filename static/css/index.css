@@ -267,6 +267,12 @@ header .navbar.animate {
     width: 100%;
 }
 
+/* skills */
+#skills .card {
+    background-color: var(--secondary-color) !important;
+    color: var(--text-color) !important;
+}
+
 /* experience */
 
 #experience h3 {
