@@ -22,8 +22,12 @@
                     {{ partial "sections/skills_simple.html" . }}
                     {{ end }}
                 {{ end }}
+            {{ if .Site.Data.about.hobbies.enable }}
+            {{ partial "sections/hobbies.html" . }}
+            {{ end }}
             </div>
         </div>
     </div>
+      
 </section>
 {{ end }}

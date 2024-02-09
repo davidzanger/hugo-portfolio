@@ -272,6 +272,17 @@ header .navbar.animate {
     background-color: var(--secondary-color) !important;
     color: var(--text-color) !important;
 }
+#about .accordion-button.collapsed {
+    background-color: var(--secondary-color) ;
+    color: var(--text-color) ;
+}
+#about .accordion-button:not(.collapsed) {
+    background-color: var(--primary-color) ;
+    color: white ;
+}
+#about .accordion-collapse {
+    background-color: var(--secondary-color) ;
+}
 
 /* experience */
 
