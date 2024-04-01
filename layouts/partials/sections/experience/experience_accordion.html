@@ -1,0 +1,50 @@
+{{ $languageData := index .Site.Data.experience .Site.Language.Lang }}
+<div class="accordion" id="experience-accordion">
+  {{ range $index, $element := $languageData.items }}
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <!-- // From: https://stackoverflow.com/questions/37547689/bootstrap-accordion-start-all-closed -->
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapse-{{ $index }}"
+        aria-expanded="false"
+        aria-controls="collapse-{{ $index }}"
+      >
+      
+      <div class="row">
+        <div class="col-md-6">
+            {{ .company }}
+        </div>
+        {{ if .used_technologies }}
+        <div class="col-md-12">
+            <div class="justify-content-end">
+                {{ range .used_technologies }}
+                    <span class="badge rounded-pill text-bg-primary opacity-75">{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+      </button>
+    </h2>
+        {{/*  Show the first accordion.  */}}
+        {{ $extraClasses := "" }}
+        {{ if $index | eq 0}}
+        {{ $extraClasses = "show" }}
+        {{ end }}
+    <div
+      id="collapse-{{ $index }}"
+      class="accordion-collapse collapse {{ $extraClasses }}"
+      data-bs-parent="#experience-accordion"
+    >
+    {{/*  Add padding here not the parent div. Otherwise, the animation is not smooth. See https://stackoverflow.com/questions/27221332/bootstrap-collapse-animation-not-smooth.  */}}
+    <div class="p-3 text-secondary">
+    {{ partial "sections/experience/content.html" . }}
+      {{ .content | markdownify }}
+    </div>
+    </div>
+  </div>
+    {{ end }}
+</div>
