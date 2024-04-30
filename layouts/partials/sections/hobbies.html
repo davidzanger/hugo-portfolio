@@ -19,7 +19,9 @@
       class="accordion-collapse collapse p-3 text-secondary"
       data-bs-parent="#hobby-accordion"
     >
-      {{ $languageData.hobbies.content | markdownify }}
+    <div class="container">    
+        {{ $languageData.hobbies.content | markdownify }}
+    </div>
     </div>
   </div>
 </div>
