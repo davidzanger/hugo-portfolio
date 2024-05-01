@@ -12,39 +12,43 @@
         aria-expanded="false"
         aria-controls="collapse-{{ $index }}"
       >
-      
-      <div class="row">
-        <div class="col-md-6">
-            {{ .company }}
-        </div>
-        {{ if .used_technologies }}
-        <div class="col-md-12">
-            <div class="justify-content-end">
-                {{ range .used_technologies }}
-                    <span class="badge rounded-pill text-bg-primary opacity-75">{{ . }}</span>
-                {{ end }}
+        <div class="container">
+          <div class="row">
+            <div class="col">{{ .company }}</div>
+            <div class="col text-end">{{ .date }}</div>
+          </div>
+          {{ if .used_technologies }}
+          <div class="row mt-2">
+            <div class="col">
+              {{ range .used_technologies }}
+              {{/*  bg-secondary text-white  */}}
+              {{/*  bg-primary-subtle text-primary  */}}
+              <span class="badge rounded-pill glow-primary-badge"
+                >{{ . }}</span
+              >
+              {{ end }}
             </div>
+          </div>
+          {{ end }}
         </div>
-        {{ end }}
-    </div>
       </button>
     </h2>
-        {{/*  Show the first accordion.  */}}
-        {{ $extraClasses := "" }}
-        {{ if $index | eq 0}}
-        {{ $extraClasses = "show" }}
-        {{ end }}
+    {{/* Show the first accordion. */}} {{ $extraClasses := "" }} {{ if $index |
+    eq 0}} {{ $extraClasses = "show" }} {{ end }}
     <div
       id="collapse-{{ $index }}"
       class="accordion-collapse collapse {{ $extraClasses }}"
       data-bs-parent="#experience-accordion"
     >
-    {{/*  Add padding here not the parent div. Otherwise, the animation is not smooth. See https://stackoverflow.com/questions/27221332/bootstrap-collapse-animation-not-smooth.  */}}
-    <div class="p-3 text-secondary">
-    {{ partial "sections/experience/content.html" . }}
-      {{ .content | markdownify }}
-    </div>
+      {{/* Add padding here not the parent div. Otherwise, the animation is not
+      smooth. See
+      https://stackoverflow.com/questions/27221332/bootstrap-collapse-animation-not-smooth.
+      */}}
+      <div class="p-3 text-secondary">
+        {{ partial "sections/experience/content.html" . }} {{ .content |
+        markdownify }}
+      </div>
     </div>
   </div>
-    {{ end }}
+  {{ end }}
 </div>
