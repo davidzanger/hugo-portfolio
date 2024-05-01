@@ -21,7 +21,7 @@
 </noscript>
 
 <!-- font configuration -->
-<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/font.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/font.css?version={{ .Site.Params.Version }}" media="all">
 
 <!-- Internal templates -->
 {{ template "_internal/google_analytics.html" . }}
@@ -34,15 +34,15 @@
 {{- else -}}
 <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/bootstrap-5/css/bootstrap.min.css" media="all">
 {{- end -}}
-<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/header.css" media="all">
-<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/footer.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/header.css?version={{ .Site.Params.Version }}" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/footer.css?version={{ .Site.Params.Version }}" media="all">
 
 <!-- theme -->
-<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/theme.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/theme.css?version={{ .Site.Params.Version }}" media="all">
 
 <!-- Custom Styles -->
 {{ if .Site.Params.customCSS }}
-<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/style.css">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/style.css?version={{ .Site.Params.Version }}">
 {{ end }}
 
 <style>
@@ -52,7 +52,7 @@
         --background-color: {{ .Site.Params.color.backgroundColor | default "#eaedf0" }};
         --secondary-background-color: {{ .Site.Params.color.secondaryBackgroundColor | default "#64ffda1a" }};
         --primary-color: {{ .Site.Params.color.primaryColor | default "#007bff" }};
-        --secondary-color: {{ .Site.Params.color.secondaryColor | default "#f8f9fa" }};
+        --secondary-color: {{ .Site.Params.color.secondaryColor | default "#fff" }};
 
         /* dark mode colors */
         --text-color-dark: {{ .Site.Params.color.darkmode.textColor | default "#e4e6eb" }};
