@@ -2,16 +2,25 @@
 .light > *{
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
+    --text-color-badge: var(--bs-primary);
+    --background-color-badge: var(--bs-primary-bg-subtle);
+    --background-color-accordion-not-collapsed: var(--bs-primary);
+    --primary-color-badge: var(--bs-primary);
+    /* var(--bs-primary-bg-subtle); */
 }
 
 /* dark mode */
-.dark {
+.dark > * {
     --background-color: var(--background-color-dark) !important;
     --secondary-background-color: var(--secondary-background-color-dark) !important;
     --text-color: var(--text-color-dark) !important;
     --text-secondary-color: var(--text-secondary-color-dark) !important;
     --primary-color: var(--primary-color-dark);
     --secondary-color: var(--secondary-color-dark);
+    --text-color-badge: var(--bs-white);
+    --background-color-badge: var(--bs-secondary); 
+    --background-color-accordion-not-collapsed: var(--background-color);
+    --primary-color-badge: var(--bs-secondary);
 }
 
 .text-secondary {

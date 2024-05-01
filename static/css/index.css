@@ -291,7 +291,7 @@ header .navbar.animate {
 }
 
 #experience * {
-    background-color: transparent !important;
+    background-color: transparent;
 }
 
 #experience .tab-pane > * {
@@ -407,6 +407,34 @@ header .navbar.animate {
     opacity: 0.7;
 }
 
+#experience .accordion-button.collapsed {
+    background-color: var(--secondary-color) ;
+    color: var(--text-color) ;
+}
+#experience .accordion-button:not(.collapsed) {
+    background-color: var(--background-color-accordion-not-collapsed);
+    color: white;
+}
+#experience .accordion-button:not(.collapsed) .dark {
+    background-color: red ;
+    color: white;
+}
+#experience .accordion-collapse {
+    background-color: var(--secondary-color) ;
+}
+
+#experience .badge {
+    background-color: var(--background-color-badge);
+    color: var(--text-color-badge);
+}
+
+
+.glow-primary-badge {
+    box-shadow: 0 0 3px var(--primary-color-badge)
+  }
+.glow-primary {
+    box-shadow: 0 0 3px var(--primary-color)
+  }
 /* Education */
 
 #education .container > h3 {
