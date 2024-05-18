@@ -1,16 +1,7 @@
 <style>
+    {{/* This not included in the css file because it it needs the hugo variable */}}
     .full-viewport-hero {
-        height: 100vh;
-        background-image: url('images/zanger_david_viewport.jpg');
-        background-size: cover;
-        background-position: 75% 0%;
-    }
-    
-    @media (min-width: 768px) {
-        .full-viewport-hero {
-            background-position: top center;
-        }
-    }
+        background-image: url({{ .Site.Data.hero.image }});
     }
 </style>
 <div class="full-viewport-hero position-relative">

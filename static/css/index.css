@@ -198,6 +198,19 @@ header .navbar.animate {
     -webkit-hyphens: auto;
 }
 
+#hero .full-viewport-hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: 75% 0%;
+}
+
+@media (min-width: 768px) {
+    #hero .full-viewport-hero {
+        background-position: top center;
+    }
+}
+
+
 
 
 /* about me */
