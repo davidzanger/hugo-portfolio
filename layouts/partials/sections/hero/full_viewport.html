@@ -1,0 +1,24 @@
+<style>
+    .full-viewport-hero {
+        height: 100vh;
+        background-image: url('images/zanger_david_viewport.jpg');
+        background-size: cover;
+        background-position: 75% 0%;
+    }
+    
+    @media (min-width: 768px) {
+        .full-viewport-hero {
+            background-position: top center;
+        }
+    }
+    }
+</style>
+<div class="full-viewport-hero position-relative">
+    {{ partial "navbar.html" . }}
+    <div class="d-md-none position-absolute bottom-0">
+        {{ partial "sections/hero/content.html" .}}
+    </div>
+    <div class="d-none d-md-block">
+        {{ partial "sections/hero/content.html" .}}
+    </div>
+</div>
