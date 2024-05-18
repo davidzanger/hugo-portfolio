@@ -13,6 +13,9 @@
             {{ end }}
             <div class="col-sm-12 col-md-12  col-lg-9 content">
                 {{ $languageData.content | markdownify }}
+                {{ if $languageData.contentReadMore }}
+                    {{ partial "sections/about/read_more.html" . }}
+                {{ end }}
 
                 {{ if .Site.Data.about.skills.enable }}
                     {{ $languageData.skills.title }}
