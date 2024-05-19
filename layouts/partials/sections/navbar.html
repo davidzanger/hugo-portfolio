@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
+<nav class="pt-3 navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
     <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
         <!-- navbar brand -->
         <a class="navbar-brand primary-font text-wrap" href="{{ .Site.BaseURL | relLangURL }}">
@@ -31,7 +31,7 @@
             <ul class="navbar-nav {{ .Site.Params.navbar.align | default "ms-auto"}} text-center">
                 {{ if not (.Site.Params.navbar.disableSearch | default false) }}
                     <li class="nav-item navbar-text d-block d-md-none">
-                        <div class="nav-link text-white">
+                        <div class="nav-link">
                             <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='{{ .Site.Params.navbar.searchPlaceholder | default "Ctrl + k to Search..."}}' aria-label="Search" oninput="searchOnChange(event)">
                         </div>
                     </li>
@@ -39,7 +39,7 @@
 
                 {{ if and (.Site.Data.about.enable | default false) (not (.Site.Params.navbar.menus.disableAbout | default false)) }}
                 <li class="nav-item navbar-text">
-                    <a class="nav-link text-white" href="#about" aria-label="about">
+                    <a class="nav-link" href="#about" aria-label="about">
                         {{ $aboutLanguageData := index .Site.Data.about .Site.Language.Lang }}
                         {{ $aboutLanguageData.title | default "About" }}
                     </a>
@@ -48,7 +48,7 @@
 
                 {{ if and (.Site.Data.experience.enable | default false) (not (.Site.Params.navbar.menus.disableExperience | default false)) }}
                 <li class="nav-item navbar-text">
-                    <a class="nav-link text-white" href="#experience"
+                    <a class="nav-link" href="#experience"
                         aria-label="experience">
                         {{ $experienceLanguageData := index .Site.Data.experience .Site.Language.Lang }}
                         {{ $experienceLanguageData.title | default "Experience" }}
@@ -58,7 +58,7 @@
 
                 {{ if and (.Site.Data.education.enable | default false) (not (.Site.Params.navbar.menus.disableEducation | default false)) }}
                 <li class="nav-item navbar-text">
-                    <a class="nav-link text-white" href="#education"
+                    <a class="nav-link" href="#education"
                         aria-label="education">
                         {{ $educationLanguageData := index .Site.Data.education .Site.Language.Lang }}
                         {{ $educationLanguageData.title | default "Education" }}
@@ -68,7 +68,7 @@
 
                 {{ if and (.Site.Data.projects.enable | default false) (not (.Site.Params.navbar.menus.disableProjects | default false)) }}
                 <li class="nav-item navbar-text">
-                    <a class="nav-link text-white" href="#projects"
+                    <a class="nav-link" href="#projects"
                         aria-label="projects">
                         {{ $projectsLanguageData := index .Site.Data.projects .Site.Language.Lang }}
                         {{ $projectsLanguageData.title | default "Projects" }}
@@ -78,7 +78,7 @@
 
                 {{ if and (.Site.Data.achievements.enable | default false) (not (.Site.Params.navbar.menus.disableAchievements | default false)) }}
                 <li class="nav-item navbar-text">
-                    <a class="nav-link text-white" href="#achievements"
+                    <a class="nav-link" href="#achievements"
                         aria-label="achievements">
                         {{ $achievementsLanguageData := index .Site.Data.achievements .Site.Language.Lang }}
                         {{ $achievementsLanguageData.title | default "Achievements" }}
@@ -88,7 +88,7 @@
 
                 {{ if and (.Site.Data.contact.enable | default false) (not (.Site.Params.navbar.menus.disableContact | default false)) }}
                 <li class="nav-item navbar-text">
-                    <a class="nav-link text-white" href="#contact"
+                    <a class="nav-link" href="#contact"
                         aria-label="contact">
                         {{ $contactLanguageData := index .Site.Data.contact .Site.Language.Lang }}
                         {{ $contactLanguageData.title | default "Contact" }}
@@ -117,7 +117,7 @@
                 {{else}}
                 <!-- Single menu item -->
                 <li class="nav-item navbar-text">
-                    <a class="nav-link text-white" href="{{.URL}}" title="{{ .Title }}">
+                    <a class="nav-link" href="{{.URL}}" title="{{ .Title }}">
                         {{ .Pre }}
                         {{ .Name }}
                     </a>

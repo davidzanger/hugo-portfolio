@@ -10,6 +10,8 @@ header {
     position: sticky;
 }
 
+.hideHeaderOnTop { display: none; }
+
 header .navbar .navbar-nav a {
     color: var(--text-color) !important;
 }
