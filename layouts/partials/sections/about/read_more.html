@@ -1,14 +1,13 @@
 <div class="m-0">
-    <div class="collapse my-3" id="collapseReadMoreAbout">
-        <div class="card card-body bg-transparent">
-            {{/*  TODO  */}}
-            This is the additional content that is revealed when the "Read More" button
-            is clicked. It can contain more detailed information, images, or any other
-            HTML elements.
+    <div class="collapse mt-3" id="collapseReadMoreAbout">
+        <div class="bg-transparent">
+            {{ $languageData := index .Site.Data.about .Site.Language.Lang }}
+            {{ $languageData.contentReadMore | markdownify }}
         </div>
     </div>
     <button
     class="btn btn-link p-0 m-0"
+    id="readMoreBtn"
     type="button"
     data-bs-toggle="collapse"
     data-bs-target="#collapseReadMoreAbout"
@@ -17,5 +16,4 @@
     >
     Read More
 </button>
-
 </div>
