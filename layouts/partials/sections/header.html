@@ -29,15 +29,33 @@
         let resetHeaderStyle = false;
         let showNavBarOnScrollUp = {{ $showNavBarOnScrollUp }};
         let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        let navLinks = document.querySelectorAll(".nav-item > .nav-link");
+        console.log(navLinks);
+        var buttonThemeToggle = document.querySelector('#theme-toggle');
+        var svgs = buttonThemeToggle.querySelectorAll('svg');
         if (showNavBar) {
             profileHeaderElem.classList.add("showHeaderOnTop");
             profileHeaderElem.classList.remove("hideHeaderOnTop");
+            profileHeaderElem.classList.remove("bg-transparent");
+            navLinks.forEach(function(navLink) {
+                navLink.classList.remove("text-white");
+            });
+            svgs.forEach(function(svg) {
+                svg.setAttribute('stroke', 'currentColor');
+            });
         } else {
             resetHeaderStyle = true;
         }
         if(currentScrollPos === 0) {
             resetHeaderStyle = true;
             profileHeaderElem.classList.add("hideHeaderOnTop");
+            profileHeaderElem.classList.add("bg-transparent");
+            navLinks.forEach(function(navLink) {
+                navLink.classList.add("text-white");
+            });
+            svgs.forEach(function(svg) {
+                svg.setAttribute('stroke', 'white');
+            });
         }
         if(resetHeaderStyle) {
             profileHeaderElem.classList.remove("showHeaderOnTop");
@@ -48,6 +66,6 @@
 {{ end }}
 
 <!-- Navbar -->
-<header id="profileHeader">
+<header id="profileHeader" class="hideHeaderOnTop bg-transparent">
     {{ partial "sections/navbar.html" .}}
 </header>

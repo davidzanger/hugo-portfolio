@@ -5,11 +5,10 @@
     }
 </style>
 <div class="full-viewport-hero position-relative">
-    {{ partial "sections/navbar.html" . }}
     <div class="d-md-none position-absolute bottom-0">
         {{ partial "sections/hero/content.html" .}}
     </div>
-    <div class="d-none d-md-block">
+    <div class="d-none d-md-block position-absolute">
         {{ partial "sections/hero/content.html" .}}
     </div>
 </div>

@@ -1,6 +1,6 @@
 /* light mode */
 .light > *{
-    background-color: var(--background-color) !important;
+    background-color: var(--background-color);
     color: var(--text-color) !important;
     --text-color-badge: var(--bs-primary);
     --background-color-badge: var(--bs-primary-bg-subtle);

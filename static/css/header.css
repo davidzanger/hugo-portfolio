@@ -10,14 +10,18 @@ header {
     position: sticky;
 }
 
-.hideHeaderOnTop { display: none; }
+.hideHeaderOnTop { 
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+}
 
 header .navbar .navbar-nav a {
-    color: var(--text-color) !important;
+    color: var(--text-color);
 }
 
 #theme-toggle {
-    background-color: var(--background-color) !important;
+    background-color: transparent;
     color: var(--text-color) !important;
 }
 
