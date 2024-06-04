@@ -2,3 +2,7 @@ grade:
   other: "Note"
 legalNotice:
   other: "Impressum"
+readMore:
+  other: "Weiterlesen"
+readLess:
+  other: "Weniger lesen"

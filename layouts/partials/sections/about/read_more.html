@@ -14,6 +14,17 @@
     aria-expanded="false"
     aria-controls="collapseReadMoreAbout"
     >
-    Read More
+    {{ i18n "readMore" | default `Read more` }}
 </button>
+<script>
+    function toggleButtonText() {
+        var button = document.getElementById("readMoreBtn");
+        if (button.innerHTML.trim() === {{ i18n "readMore" | default `Read more` }}) {
+            button.innerHTML = {{ i18n "readLess" | default `Read less`}}
+        } else {
+            button.innerHTML = {{ i18n "readMore" | default `Read more` }};
+        }
+    }
+    document.getElementById("readMoreBtn").addEventListener("click", toggleButtonText);
+</script>
 </div>

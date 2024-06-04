@@ -2,3 +2,7 @@ grade:
   other: "Grade"
 legalNotice:
   other: "Legal Notice"
+readMore:
+  other: "Read more"
+readLess:
+  other: "Read less"
