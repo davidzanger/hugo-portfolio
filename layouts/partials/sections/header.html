@@ -29,11 +29,11 @@
         let resetHeaderStyle = false;
         let showNavBarOnScrollUp = {{ $showNavBarOnScrollUp }};
         let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        let showAlwaysNavBar = true;
         let navLinks = document.querySelectorAll(".nav-item > .nav-link");
-        console.log(navLinks);
         var buttonThemeToggle = document.querySelector('#theme-toggle');
         var svgs = buttonThemeToggle.querySelectorAll('svg');
-        if (showNavBar) {
+        if (showNavBar || showAlwaysNavBar) {
             profileHeaderElem.classList.add("showHeaderOnTop");
             profileHeaderElem.classList.remove("hideHeaderOnTop");
             profileHeaderElem.classList.remove("bg-transparent");
