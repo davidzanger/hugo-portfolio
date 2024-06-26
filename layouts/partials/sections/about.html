@@ -16,6 +16,8 @@
                 {{ if $languageData.contentReadMore }}
                     {{ partial "sections/about/read_more.html" . }}
                 {{ end }}
+                    
+                {{ partial "sections/about/services.html" . }}
 
                 {{ if .Site.Data.about.skills.enable }}
                     {{ $languageData.skills.title }}
