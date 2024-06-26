@@ -1,36 +1,20 @@
 <section class="services">
-    <div class="container mb-5">
+    <div class="container my-5">
         <div class="row">
-            <div class="col-lg-4 mx-auto mb-5">
-                <div class="d-flex mb-3 icon">
-                    <span class="fa-solid fa-c m-auto text-primary">palette</span>
-                </div>
-                <h5 class="text-center">Design</h5>
-                <p class="text-muted mb-0">
-                    I create beautiful, modern designs optimized for multiple
-                    color modes (light and dark themes).
-                </p>
-            </div>
-            <div class="col-lg-4 mx-auto mb-5">
-                <div class="d-flex mb-3 icon">
-                    <span class="fa-solid fa-code m-auto text-primary">code</span>
-                </div>
-                <h5 class="text-center">Development</h5>
-                <p class="text-muted mb-0">
-                    I develop responsive, scalable, and fast applications using
-                    the best standards and coding practices.
-                </p>
-            </div>
-            <div class="col-lg-4 mx-auto mb-5">
-                <div class="d-flex mb-3 icon">
-                    <span class="material-icons-outlined m-auto text-primary">settings</span>
-                </div>
-                <h5 class="text-center">Launch & Maintenance</h5>
-                <p class="text-muted mb-0">
-                    Once the application is ready, I will help you launch it and
-                    teach you how to update and maintain it.
-                </p>
-            </div>
+            {{ if .Site.Data.about.services.enable }}
+                {{ $languageData := index .Site.Data.about .Site.Language.Lang }}
+                {{ range $languageData.services.items}}
+                    <div class="col-lg-4 mx-auto mb-5">
+                        <div class="d-flex mb-3 icon">
+                            <span class="{{ .icon }} m-auto text-primary"></span>
+                        </div>
+                        <h5 class="text-center">{{ .title }}</h5>
+                        <p class="text-muted mb-0">
+                            {{ .description }}
+                        </p>
+                    </div>
+                {{ end }}
+            {{ end }}
         </div>
     </div>
 </section>
