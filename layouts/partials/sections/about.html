@@ -20,13 +20,15 @@
                 {{ partial "sections/about/services.html" . }}
 
                 {{ if .Site.Data.about.skills.enable }}
+                <div class="my-2">    
                     {{ $languageData.skills.title }}
                     {{ if eq .Site.Data.about.skills.mode "extended" }}
                     {{ partial "sections/skills_extended.html" . }}
                     {{ else if eq .Site.Data.about.skills.mode "simple" }}
                     {{ partial "sections/skills_simple.html" . }}
                     {{ end }}
-                {{ end }}
+                    {{ end }}
+                </div>
             {{ if .Site.Data.about.hobbies.enable }}
             {{ partial "sections/hobbies.html" . }}
             {{ end }}
